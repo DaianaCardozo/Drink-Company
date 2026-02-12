@@ -653,7 +653,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* SECCIÓN: ¿POR QUÉ ELEGIRNOS? (AHORA VA DEBAJO DE CURSOS) */}
+        {/* SECCIÓN: ¿POR QUÉ ELEGIRNOS?  */}
         <section className="relative z-20 -mt-24 pt-14 pb-24 rounded-t-[44px] bg-[#0F1115]">
           {/* Puente visual Hero → Sección */}
           <div className="pointer-events-none absolute inset-x-0 -top-24 h-24 bg-gradient-to-b from-black/0 via-[#0F1115]/60 to-[#0F1115]" />
@@ -674,13 +674,16 @@ export default function App() {
                   </div>
 
                   <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
-                    Entrenamiento detrás de una barra real
+                    Certificación profesional
                   </div>
 
                   <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
-                    Método práctico e intensivo
+                    Reconocimiento en AMBA
                   </div>
                 </div>
+
+
+                
                    {/* TEXTO AUTORIDAD */}
 <div className="max-w-2xl">
   <p className="text-white/85 text-[17px] leading-relaxed">
