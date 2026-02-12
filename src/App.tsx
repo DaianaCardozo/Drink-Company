@@ -20,29 +20,30 @@ export default function App() {
     <div className="min-h-screen bg-[#0F1115] text-white font-['Plus_Jakarta_Sans']">
       {/* HEADER (global) */}
       <header className="absolute top-0 left-0 right-0 z-30 border-b border-white/30">
-        <div className="mx-auto max-w-6xl flex items-center justify-between px-6 h-[72px]">
-          <a href="#home" className="flex items-center -ml-20" aria-label="Ir al inicio">
+        <div className="mx-auto max-w-6xl flex items-center justify-between px-6 h-[80px]">
+          <a href="#home" className="flex items-center -ml-20 translate-y-[3px]" aria-label="Ir al inicio">
             <img
               src={logo}
               alt="Drink Company"
-              className="h-[113px] w-auto object-contain"
+              className="h-[115px] w-auto object-contain"
             />
           </a>
 
           <nav
-            className="flex items-center gap-10 text-lg font-semibold text-white/90"
-            aria-label="Navegación principal"
-          >
-            <a href="#cursos" className="hover:text-white transition">
-              Cursos
-            </a>
-            <a href="#servicios" className="hover:text-white transition">
-              Servicios
-            </a>
-            <a href="#contacto" className="hover:text-white transition">
-              Contacto
-            </a>
-          </nav>
+  className="flex h-[72px] items-end gap-10 pb-3 text-lg font-semibold text-white/90"
+  aria-label="Navegación principal"
+>
+  <a href="#cursos" className="hover:text-white transition">
+    Cursos
+  </a>
+  <a href="#servicios" className="hover:text-white transition">
+    Servicios
+  </a>
+  <a href="#contacto" className="hover:text-white transition">
+    Contacto
+  </a>
+</nav>
+
         </div>
       </header>
 
@@ -73,7 +74,8 @@ export default function App() {
           Formación intensiva · Prácticas detrás de barra · Inserción laboral
         </p>
 
-        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+        <div className="mt-30 flex flex-col sm:flex-row gap-4">
+
           <a
             href="#cursos"
             className="inline-flex items-center justify-center rounded-full bg-[#C65D3A] px-7 py-3 text-sm font-semibold text-white hover:bg-[#A84E30] transition"
@@ -93,12 +95,12 @@ export default function App() {
       <aside className="hidden md:flex flex-col gap-6 pl-6 mt-14" aria-label="Indicadores de confianza">
         <div>
           <p className="text-2xl font-semibold text-white">+1200</p>
-          <p className="text-sm text-white/70 tracking-wide">alumnos formados</p>
+          <p className="text-sm text-white/70 tracking-wide">Alumnos formados</p>
         </div>
 
         <div>
           <p className="text-2xl font-semibold text-white">Certificación</p>
-          <p className="text-sm text-white/70 tracking-wide">profesional</p>
+          <p className="text-sm text-white/70 tracking-wide">Profesional</p>
         </div>
 
         <div>
