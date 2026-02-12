@@ -141,7 +141,9 @@ export default function App() {
 
               <div className="space-y-6 max-w-none md:translate-x-0">
                 {/* 1 */}
-                <div className="flex items-start justify-between gap-5 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 transition hover:bg-white/15">
+                <div className="flex items-start justify-between gap-5 bg-black/20 backdrop-blur-sm border border-white/5 rounded-2xl p-5 transition hover:bg-black/25">
+
+
                   <div className="flex items-start gap-5 flex-1">
                     <img
                       src={daiana}
@@ -165,7 +167,8 @@ export default function App() {
                 </div>
 
                 {/* 2 */}
-                <div className="flex items-start justify-between gap-5 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 transition hover:bg-white/15">
+               <div className="flex items-start justify-between gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50">
+
                   <div className="flex items-start gap-5 flex-1">
                     <img
                       src={martin}
@@ -189,7 +192,8 @@ export default function App() {
                 </div>
 
                 {/* 3 */}
-                <div className="flex items-start justify-between gap-5 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 transition hover:bg-white/15">
+                <div className="flex items-start justify-between gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50">
+
                   <div className="flex items-start gap-5 flex-1">
                     <img
                       src={marcelo}
@@ -199,7 +203,7 @@ export default function App() {
 
                     <div>
                       <p className="text-[15px] leading-relaxed text-white/85">
-                        “Gracias a esta formación hoy trabajo en barra y estoy realizando una pasantía en Miami, poniendo en práctica todo lo aprendido.”
+                        “Gracias a esta formación hoy trabajo en barra y estoy poniendo en práctica todo lo aprendido.”
                       </p>
                       <p className="mt-2 text-sm font-semibold text-white">
                         — Marcelo G. · Bartender Internacional
@@ -220,19 +224,25 @@ export default function App() {
                 Profesores de calidad
               </h3>
 
-              <div className="rounded-3xl overflow-hidden bg-white/10 backdrop-blur border border-white/15 shadow-lg w-[320px]">
+             <div className="rounded-3xl overflow-hidden bg-white/[0.02] backdrop-blur-sm border border-white/15 w-[320px]">
+
+
                 <img
                   src={profesor}
                   alt="Profesor de coctelería"
                   className="w-full h-[320px] object-cover"
                 />
 
-                <div className="pt-2 pb-6 px-6">
+                <div className="pt-3 pb-6 px-6 bg-black/50">
+
                   <p className="text-lg font-semibold text-white -ml-1">
                     Ramiro Cardozo
                   </p>
 
-                  <p className="text-sm text-white/70 mt-1">
+                 <p className="text-sm text-white/60 mt-1">
+
+
+
                     Head Bartender · 10 años de experiencia
                   </p>
                 </div>
