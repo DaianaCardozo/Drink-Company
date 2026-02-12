@@ -49,7 +49,7 @@ export default function App() {
 
       <main>
         {/* HERO */}
-<section id="home" className="relative h-[720px] overflow-hidden">
+<section id="home" className="relative h-[640px] overflow-hidden">
   
   {/* IMAGEN + OVERLAYS */}
   <div className="absolute inset-0">
@@ -62,6 +62,8 @@ export default function App() {
     <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent" />
   </div>
 
+
+
   {/* CONTENIDO */}
   <div className="relative z-10 mx-auto max-w-7xl px-8 pt-16 md:pt-24">
     <div className="flex justify-between items-start">
@@ -71,7 +73,7 @@ export default function App() {
         </h1>
 
         <p className="mt-6 max-w-md text-white/80 text-[16px] leading-relaxed">
-          Formación intensiva · Prácticas detrás de barra · Inserción laboral
+          Formación intensiva · Prácticas detrás de barra · Inserción laboral.
         </p>
 
         <div className="mt-30 flex flex-col sm:flex-row gap-4">
@@ -119,7 +121,7 @@ export default function App() {
         {/* SECCIÓN: CURSOS (AHORA VA ACÁ) */}
         <section
           id="cursos"
-          className="py-20 bg-gradient-to-b from-[#0F1115] via-[#0B0D10] to-[#0F1115]"
+          className="pt-6 pb-20 bg-gradient-to-b from-[#0F1115] via-[#0B0D10] to-[#0F1115]"
         >
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-10">
@@ -679,6 +681,12 @@ export default function App() {
                     Método práctico e intensivo
                   </div>
                 </div>
+                   {/* TEXTO AUTORIDAD */}
+<div className="max-w-2xl">
+  <p className="text-white/85 text-[17px] leading-relaxed">
+   En <span className="font-semibold">Drink Company</span> formamos bartenders con un programa certificado y alineado a las exigencias reales de la industria. Brindamos capacitación técnica, práctica profesional y todos los materiales necesarios —recetarios y libreta de curso— para que aprendas con estructura, confianza y proyección laboral desde el primer día.
+  </p>
+</div>
 
                 <div className="space-y-6 max-w-none md:translate-x-0" aria-label="Testimonios">
                   {/* 1 */}
