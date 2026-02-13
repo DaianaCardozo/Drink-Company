@@ -2,6 +2,8 @@ import logo from "./assets/logo.png";
 import hero from "./assets/hero.jpg";
 import profesor from "./assets/profesor.jpg";
 
+
+
 import daiana from "./assets/avatars/daiana.png";
 import marcelo from "./assets/avatars/marcelo.jpg";
 import martin from "./assets/avatars/martin.jpg";
@@ -85,7 +87,8 @@ export default function App() {
           </a>
 
           <a
-  href="https://wa.me/5491154708191?text=Hola!%20Quiero%20información%20sobre%20los%20cursos%20de%20bartender.%20¿Podrían%20pasarme%20fechas,%20precios%20y%20modalidad?"
+  href="https://wa.me/5491154708191?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20bartender.%20%C2%BFPodr%C3%ADan%20pasarme%20fechas%2C%20precios%20y%20modalidad%3F"
+
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur px-7 py-3 text-sm font-semibold text-white hover:bg-white/20 transition"
@@ -549,39 +552,70 @@ export default function App() {
               </div>
 
               {/* DERECHA */}
-              <aside className="space-y-6 flex flex-col items-end md:-mt-10" aria-label="Profesor destacado">
-                <h3 className="text-2xl font-semibold self-end w-[320px] text-left">
-                  Profesores de calidad
-                </h3>
+<aside className="space-y-6 flex flex-col items-end md:-mt-10" aria-label="Profesor destacado">
+  <h3 className="text-2xl font-semibold self-end w-[320px] text-left">
+    Profesores de calidad
+  </h3>
 
-                <div className="rounded-3xl overflow-hidden bg-white/[0.02] backdrop-blur-sm border border-white/15 w-[320px]">
-                  <img
-                    src={profesor}
-                    alt="Profesor de coctelería"
-                    className="w-full h-[320px] object-cover"
-                  />
+  <div className="rounded-3xl overflow-hidden bg-white/[0.02] backdrop-blur-sm border border-white/15 w-[320px]">
+    <img
+      src={profesor}
+      alt="Profesor de coctelería"
+      className="w-full h-[320px] object-cover"
+    />
 
-                  <div className="pt-3 pb-6 px-6 bg-black/50">
-                    <p className="text-lg font-semibold text-white -ml-1">
-                      Ramiro Cardozo
-                    </p>
+    <div className="pt-3 pb-6 px-6 bg-black/50">
+     <div className="flex items-center gap-2">
+  <p className="text-lg font-semibold text-white -ml-1">
+    Ramiro Cardozo
+  </p>
 
-                    <p className="text-sm text-white/60 mt-1">
-                      Head Bartender · 10 años de experiencia
-                    </p>
-                  </div>
-                </div>
-
-               <a
-  href="https://wa.me/5491154708191?text=Hola!%20Quiero%20hablar%20con%20un%20asesor%20sobre%20los%20cursos."
+ <a
+  href="https://www.instagram.com/_u/ramacocktail12/"
   target="_blank"
   rel="noopener noreferrer"
-  className="block w-full text-center bg-[#C65D3A] hover:bg-[#A84E30] text-white font-semibold py-3 rounded-xl transition"
+  aria-label="Ramiro Cardozo"
+  className="inline-flex items-center ml-2"
 >
-  Hablar con un asesor
+  <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="igREAL" cx="30%" cy="107%" r="150%">
+        <stop offset="0%" stopColor="#fdf497"/>
+        <stop offset="5%" stopColor="#fdf497"/>
+        <stop offset="45%" stopColor="#fd5949"/>
+        <stop offset="60%" stopColor="#d6249f"/>
+        <stop offset="90%" stopColor="#285AEB"/>
+      </radialGradient>
+    </defs>
+    <rect width="24" height="24" rx="6" fill="url(#igREAL)" />
+    <circle cx="12" cy="12" r="5" fill="none" stroke="white" strokeWidth="2"/>
+    <circle cx="17.5" cy="6.5" r="1.4" fill="white"/>
+  </svg>
 </a>
 
-              </aside>
+
+
+</div>
+
+
+
+
+      <p className="text-sm text-white/60 mt-1">
+        Head Bartender · 10 años de experiencia
+      </p>
+    </div>
+  </div>
+
+  <a
+    href="https://wa.me/5491154708191?text=Hola!%20Quiero%20hablar%20con%20un%20asesor%20sobre%20los%20cursos."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block w-full text-center bg-[#C65D3A] hover:bg-[#A84E30] text-white font-semibold py-3 rounded-xl transition"
+  >
+    Hablar con un asesor
+  </a>
+</aside>
+
             </div>
           </div>
         </section>
