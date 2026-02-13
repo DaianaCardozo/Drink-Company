@@ -15,6 +15,9 @@ import cursoInicial from "./assets/cursos/cursoinicial.jpg";
 import cursoClasico from "./assets/cursos/cursoclasico.jpg";
 import cursoTiki from "./assets/cursos/cursotiki.jpg";
 
+import alumno from "./assets/transformacion/alumno.png";
+import profesional from "./assets/transformacion/profesional.jpg";
+
 export default function App() {
   return (
     <div className="min-h-screen bg-[#0F1115] text-white font-['Plus_Jakarta_Sans']">
@@ -674,7 +677,7 @@ export default function App() {
                   </div>
 
                   <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
-                    Certificación profesional
+                    Certificación internacional profesional
                   </div>
 
                   <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
@@ -806,6 +809,85 @@ export default function App() {
             </div>
           </div>
         </section>
+
+
+        {/* SECCIÓN TRANSFORMACIÓN */}
+<section className="relative pt-8 pb-24 bg-[#0B0D10]">
+<div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0F1115] to-transparent" />
+
+
+  <div className="max-w-7xl mx-auto px-8">
+
+    {/* TITULO */}
+    <div className="text-center mb-16">
+      <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
+        De alumno a profesional
+      </h2>
+
+      <p className="mt-4 text-white/70 text-lg">
+        Nuestra formación está diseñada para llevarte de tus primeros pasos a un desempeño real detrás de la barra.
+      </p>
+    </div>
+
+    {/* CARDS */}
+    <div className="grid md:grid-cols-2 gap-10">
+
+      {/* ANTES */}
+      <div className="relative h-[340px] rounded-3xl overflow-hidden border border-white/10">
+
+
+  <img
+    src={alumno}
+    alt="Alumno sin experiencia"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/60" />
+
+  <div className="relative h-full p-10 flex flex-col justify-end">
+
+    <span className="text-sm uppercase tracking-widest text-white/50">
+      Antes
+    </span>
+
+    <h3 className="text-3xl font-semibold mt-3">
+      Sin experiencia
+    </h3>
+  </div>
+
+</div>
+
+
+
+      {/* DESPUÉS */}
+      <div className="relative rounded-3xl overflow-hidden border border-[#C65D3A]/40">
+
+  <img
+    src={profesional}
+    alt="Trabajando en la barra"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/50" />
+
+  <div className="relative h-full p-10 flex flex-col justify-end">
+
+    <span className="text-sm uppercase tracking-widest text-white/50">
+      Después
+    </span>
+
+    <h3 className="text-3xl font-semibold mt-3">
+      Trabajando en la barra
+    </h3>
+  </div>
+
+</div>
+
+
+    </div>
+  </div>
+</section>
+
 
         {/* Espacio */}
         <div className="h-16" />
