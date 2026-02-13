@@ -618,37 +618,110 @@ export default function App() {
 
             </div>
           </div>
+
         </section>
 
+       {/* PRE FOOTER — CIERRE EMOCIONAL */}
+<section className="relative pt-10 pb-20 bg-[#0F1115]">
 
-      {/* SECCIÓN TRANSFORMACIÓN */}
-<section className="relative pt-8 pb-24 bg-[#0B0D10]">
-  <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0F1115] to-transparent" />
+  {/* puente suave DESDE la sección anterior */}
+  <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-[#0F1115] to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-8">
-       {/* TITULO */}
-          <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
-             De alumno a profesional
-         </h2>
+  {/* puente suave HACIA el footer */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#0B0D10]" />
 
-      <p className="mt-4 text-white/70 text-lg">
-        Formamos profesionales preparados para trabajar detrás de una barra real.
-      </p>
+  <div className="max-w-4xl mx-auto px-8 text-center">
+    <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.1]">
+      De alumno a profesional
+     </h2>
+
+
+    <p className="mt-5 text-white/70 text-lg max-w-2xl mx-auto">
+      Formamos profesionales preparados para desempeñarse con seguridad,
+      técnica y criterio en una barra real.
+    </p>
+
+    <a
+      href="https://wa.me/5491154708191"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block mt-10 px-8 py-4 rounded-full bg-[#C65D3A] hover:bg-[#A84E30] text-white font-semibold transition-transform hover:scale-[1.03]"
+    >
+      Empezá tu transformación
+    </a>
+  </div>
+</section>
+
+          </main>
+
+    
+
+      <footer className="bg-[#0B0D10]">
+
+        <div className="max-w-7xl mx-auto px-8 py-16">
+          <div className="grid md:grid-cols-3 gap-12 items-start">
+
+            {/* MARCA */}
+            <div>
+              <h3 className="text-xl font-semibold tracking-tight">
+                Drink Company
+              </h3>
+
+              <p className="mt-3 text-white/60 max-w-xs">
+                Formamos bartenders con estándares profesionales para la industria real.
+              </p>
+            </div>
+
+            {/* CONTACTO */}
+            <div>
+              <h4 className="text-sm uppercase tracking-widest text-white/40">
+                Contacto
+              </h4>
+
+              <ul className="mt-4 space-y-2 text-white/70">
+                <li>info@drinkcompany.com</li>
+                <li>+54 9 1154708191</li>
+              </ul>
+            </div>
+
+            {/* REDES */}
+            <div>
+              <h4 className="text-sm uppercase tracking-widest text-white/40">
+                Seguinos
+              </h4>
+
+              <div className="mt-4 flex gap-4">
+                <a
+  href="https://www.instagram.com/drink.company_barras/?hl=es-la"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-white/70 hover:text-white transition-colors"
+>
+  Instagram
+</a>
+
+<a
+  href="https://www.facebook.com/ramiiroc07"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-white/70 hover:text-white transition-colors"
+>
+  Facebook
+</a>
+
               </div>
-         </div>
-       </section>
+            </div>
 
-{/* Espacio */}
-<div className="h-16" />
+          </div>
 
-      </main>
+          {/* LINEA INFERIOR */}
+          <div className="mt-16 pt-6 border-t border-white/10 text-center text-white/40 text-sm">
+            © {new Date().getFullYear()} Drink Company — Todos los derechos reservados.
+          </div>
 
-      <footer aria-label="Pie de página">{/* después lo armamos */}
-        <div className="mt-12 pt-6 border-t border-white/10 text-center text-white/50 text-sm">
-      © {new Date().getFullYear()} Drink Company — Todos los derechos reservados.
-    </div>
+        </div>
       </footer>
+
     </div>
   );
 }
