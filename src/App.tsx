@@ -6,17 +6,13 @@ import daiana from "./assets/avatars/daiana.png";
 import marcelo from "./assets/avatars/marcelo.jpg";
 import martin from "./assets/avatars/martin.jpg";
 
-import cursoPrivado from "./assets/cursos/cursoprivado.jpg";
-import cursoHibrido from "./assets/cursos/cursohibrido.jpg";
-import cursoIntensivo from "./assets/cursos/cursointensivo.jpg";
-import cursoPremium from "./assets/cursos/cursopremium.jpg";
+
+
 import cursoAcademia from "./assets/cursos/cursoacademia.jpg";
 import cursoInicial from "./assets/cursos/cursoinicial.jpg";
-import cursoClasico from "./assets/cursos/cursoclasico.jpg";
+import barraMovil from "./assets/cursos/barramovil.jpg";
 import cursoTiki from "./assets/cursos/cursotiki.jpg";
 
-import alumno from "./assets/transformacion/alumno.png";
-import profesional from "./assets/transformacion/profesional.jpg";
 
 export default function App() {
   return (
@@ -89,11 +85,14 @@ export default function App() {
           </a>
 
           <a
-            href="#contacto"
-            className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur px-7 py-3 text-sm font-semibold text-white hover:bg-white/20 transition"
-          >
-            WhatsApp
-          </a>
+  href="https://wa.me/5491154708191?text=Hola!%20Quiero%20información%20sobre%20los%20cursos%20de%20bartender.%20¿Podrían%20pasarme%20fechas,%20precios%20y%20modalidad?"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur px-7 py-3 text-sm font-semibold text-white hover:bg-white/20 transition"
+>
+  Inscribite por WhatsApp
+</a>
+
         </div>
       </div>
 
@@ -141,70 +140,7 @@ export default function App() {
               className="grid gap-7 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch"
               aria-label="Listado de cursos"
             >
-              <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
-                  {/* IMAGEN */}
-                  <img
-                    src={cursoPrivado}
-                    alt="Clases Particulares de coctelería"
-                    className="absolute inset-0 h-full w-full object-cover transition-all duration-300 group-hover:opacity-0"
-                  />
-
-                  {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
-
-                  {/* CONTENIDO (NORMAL) */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
-                    <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Clases Privadas de coctelería
-                    </h3>
-
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
-                        Personalizado
-                      </span>
-
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        Entrenamiento 1 a 1 para avanzar más rápido.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* OVERLAY (HOVER) */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
-
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
-                      <p className="text-white text-lg font-semibold">
-                        Entrenamiento personalizado
-                      </p>
-
-                      <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        Modalidad 1 a 1 <br />
-                        Horarios flexibles <br />
-                        Contenido adaptado a tu nivel
-                      </p>
-
-                      <p className="mt-4 text-white/60 text-xs">
-                        Ideal para avanzar rápido y perfeccionar técnica
-                      </p>
-
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar clase
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
+            
               <li>
                 <a
                   href="#contacto"
@@ -261,269 +197,21 @@ export default function App() {
                         Ideal para comenzar desde cero y ganar seguridad detrás de la barra
                       </p>
 
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar clase
-                      </button>
+                      <a
+  href="https://wa.me/5491154708191?text=Quiero%20reservar%20una%20clase.%20%C2%BFPodr%C3%ADan%20pasarme%20disponibilidad?"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+>
+  Reservar clase
+</a>
+
                     </div>
                   </div>
                 </a>
               </li>
 
-              <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
-                  {/* IMAGEN */}
-                  <img
-                    src={cursoPremium}
-                    alt="Bartender Inicial Premium"
-                    className="absolute inset-0 h-full w-full object-cover transition-all duration-300 group-hover:opacity-0"
-                  />
-
-                  {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
-
-                  {/* CONTENIDO NORMAL */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
-                    <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Bartender Inicial Premium
-                    </h3>
-
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <span className="inline-flex w-fit items-center gap-2 text-[11px] tracking-widest uppercase font-semibold text-white bg-[#C65D3A] px-3 py-1 rounded-full">
-                        ⭐ Premium
-                      </span>
-
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        Más práctica. Más exigencia. Más nivel.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
-
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
-                      <p className="text-white text-lg font-semibold">
-                        Experiencia premium
-                      </p>
-
-                      <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        4 clases <br />
-                        3 hs <br />
-                        2 veces por semana
-                      </p>
-
-                      <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-                        Seguimiento personalizado + práctica intensiva
-                      </p>
-
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar clase
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
-                  {/* IMAGEN */}
-                  <img
-                    src={cursoIntensivo}
-                    alt="Bartender Inicial Intensivo"
-                    className="absolute inset-0 h-full w-full object-cover transition-all duration-300 group-hover:opacity-0"
-                  />
-
-                  {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/45 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
-
-                  {/* CONTENIDO NORMAL */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
-                    <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Bartender Inicial Intensivo
-                    </h3>
-
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
-                        Intensivo
-                      </span>
-
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        Aprendé más rápido. Serví antes.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
-
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
-                      <p className="text-white text-lg font-semibold">
-                        Formato intensivo
-                      </p>
-
-                      <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        10 clases <br />
-                        3 hs <br />
-                        2 veces por semana
-                      </p>
-
-                      <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-                        Ideal para insertarte rápido en barra
-                      </p>
-
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar clase
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
-                  {/* IMAGEN */}
-                  <img
-                    src={cursoClasico}
-                    alt="Bartender Profesional"
-                    className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                  />
-
-                  {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
-
-                  {/* CONTENIDO NORMAL */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
-                    <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Bartender Profesional
-                    </h3>
-
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
-                        Profesional
-                      </span>
-
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        Formación bartender de nivel profesional.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
-
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
-                      <p className="text-white text-lg font-semibold">
-                        Nivel profesional
-                      </p>
-
-                      <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        4 clases presenciales <br />
-                        3 hs <br />
-                        2 veces por semana
-                      </p>
-
-                      <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-                        Técnica + velocidad + ejecución bajo presión
-                      </p>
-
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar clase
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
-                  {/* IMAGEN */}
-                  <img
-                    src={cursoHibrido}
-                    alt="Experiencia Bartender"
-                    className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
-                  />
-
-                  {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/45 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
-
-                  {/* CONTENIDO NORMAL */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
-                    <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Experiencia Bartender
-                    </h3>
-
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
-                        Híbrido
-                      </span>
-
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        Clases online en vivo + prácticas presenciales en barra real.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* OVERLAY */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
-
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
-                      <p className="text-white text-lg font-semibold">
-                        Modalidad de cursada
-                      </p>
-
-                      <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        6 clases totales <br />
-                        4 virtuales en vivo <br />
-                        2 prácticas presenciales
-                      </p>
-
-                      <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-                        Ideal para formarte sin dejar tu rutina
-                      </p>
-
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar clase
-                      </button>
-                    </div>
-                  </div>
-                </a>
-              </li>
+              
 
               <li>
                 <a
@@ -581,9 +269,15 @@ export default function App() {
                         Práctica en academia real + acompañamiento
                       </p>
 
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar carrera
-                      </button>
+                     <a
+  href="https://wa.me/5491154708191?text=Quiero%20inscribirme%20a%20la%20carrera%20de%20bartender.%20%C2%BFPodr%C3%ADan%20pasarme%20informaci%C3%B3n%20sobre%20fechas%20y%20requisitos?"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+>
+  Inscribirme a la carrera
+</a>
+
                     </div>
                   </div>
                 </a>
@@ -608,12 +302,12 @@ export default function App() {
                   {/* CONTENIDO NORMAL */}
                   <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
                     <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Tiki Coctél Experience
+                      Talleres 
                     </h3>
 
                     <div className="flex flex-col gap-3 mt-auto">
                       <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
-                        Edición especial
+                        Edición especial - TIKI
                       </span>
 
                       <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
@@ -645,13 +339,89 @@ export default function App() {
                         Incluye práctica guiada + material de apoyo
                       </p>
 
-                      <button className="mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]">
-                        Reservar taller
-                      </button>
+                      <a
+  href="https://wa.me/5491154708191?text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20este%20taller."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+>
+  Reservar taller
+</a>
+
                     </div>
                   </div>
                 </a>
               </li>
+             <li>
+  <a
+    href="#contacto"
+    className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
+  >
+    {/* IMAGEN */}
+    <img
+      src={barraMovil}
+      alt="Servicio de barras móviles para eventos"
+      className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+    />
+
+    {/* CAPAS */}
+    <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+
+    {/* CONTENIDO NORMAL */}
+    <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
+      <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
+        Barras móviles para eventos
+      </h3>
+
+      <div className="flex flex-col gap-3 mt-auto">
+        <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
+          Premium Service
+        </span>
+
+        <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
+          Experiencia de coctelería profesional para bodas, empresas y celebraciones privadas.
+        </p>
+
+        <span className="inline-flex items-center text-white font-semibold">
+          Consultar disponibilidad →
+        </span>
+      </div>
+    </div>
+
+    {/* OVERLAY */}
+    <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      <div className="absolute inset-0 bg-black/95" />
+
+      <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
+        <p className="text-white text-lg font-semibold">
+          Servicio integral
+        </p>
+
+        <p className="mt-3 text-white/90 text-sm leading-relaxed">
+          Barras móviles elegantes <br />
+          Bartenders profesionales <br />
+          Cristalería + insumos incluidos
+        </p>
+
+        <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
+          Montaje, operación y experiencia pensada para que tu evento sea inolvidable.
+        </p>
+
+        <a
+  href="https://wa.me/5491154708191?text=Quiero%20pedir%20un%20presupuesto%20para%20un%20evento.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n?"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+>
+  Solicitar presupuesto
+</a>
+
+      </div>
+    </div>
+  </a>
+</li>
+
             </ul>
           </div>
         </section>
@@ -802,98 +572,49 @@ export default function App() {
                   </div>
                 </div>
 
-                <button className="w-full bg-[#C65D3A] hover:bg-[#A84E30] text-white font-semibold py-3 rounded-xl transition">
-                  Hablar con un asesor
-                </button>
+               <a
+  href="https://wa.me/5491154708191?text=Hola!%20Quiero%20hablar%20con%20un%20asesor%20sobre%20los%20cursos."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block w-full text-center bg-[#C65D3A] hover:bg-[#A84E30] text-white font-semibold py-3 rounded-xl transition"
+>
+  Hablar con un asesor
+</a>
+
               </aside>
             </div>
           </div>
         </section>
 
 
-        {/* SECCIÓN TRANSFORMACIÓN */}
+      {/* SECCIÓN TRANSFORMACIÓN */}
 <section className="relative pt-8 pb-24 bg-[#0B0D10]">
-<div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0F1115] to-transparent" />
+  <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#0F1115] to-transparent" />
 
-
-  <div className="max-w-7xl mx-auto px-8">
-
-    {/* TITULO */}
-    <div className="text-center mb-16">
-      <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
-        De alumno a profesional
-      </h2>
+        <div className="max-w-7xl mx-auto px-8">
+       {/* TITULO */}
+          <div className="text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-semibold tracking-tight">
+             De alumno a profesional
+         </h2>
 
       <p className="mt-4 text-white/70 text-lg">
-        Nuestra formación está diseñada para llevarte de tus primeros pasos a un desempeño real detrás de la barra.
+        Formamos profesionales preparados para trabajar detrás de una barra real.
       </p>
-    </div>
+              </div>
+         </div>
+       </section>
 
-    {/* CARDS */}
-    <div className="grid md:grid-cols-2 gap-10">
+{/* Espacio */}
+<div className="h-16" />
 
-      {/* ANTES */}
-      <div className="relative h-[340px] rounded-3xl overflow-hidden border border-white/10">
-
-
-  <img
-    src={alumno}
-    alt="Alumno sin experiencia"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-black/60" />
-
-  <div className="relative h-full p-10 flex flex-col justify-end">
-
-    <span className="text-sm uppercase tracking-widest text-white/50">
-      Antes
-    </span>
-
-    <h3 className="text-3xl font-semibold mt-3">
-      Sin experiencia
-    </h3>
-  </div>
-
-</div>
-
-
-
-      {/* DESPUÉS */}
-      <div className="relative rounded-3xl overflow-hidden border border-[#C65D3A]/40">
-
-  <img
-    src={profesional}
-    alt="Trabajando en la barra"
-    className="absolute inset-0 w-full h-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-black/50" />
-
-  <div className="relative h-full p-10 flex flex-col justify-end">
-
-    <span className="text-sm uppercase tracking-widest text-white/50">
-      Después
-    </span>
-
-    <h3 className="text-3xl font-semibold mt-3">
-      Trabajando en la barra
-    </h3>
-  </div>
-
-</div>
-
-
-    </div>
-  </div>
-</section>
-
-
-        {/* Espacio */}
-        <div className="h-16" />
       </main>
 
-      <footer aria-label="Pie de página">{/* después lo armamos */}</footer>
+      <footer aria-label="Pie de página">{/* después lo armamos */}
+        <div className="mt-12 pt-6 border-t border-white/10 text-center text-white/50 text-sm">
+      © {new Date().getFullYear()} Drink Company — Todos los derechos reservados.
+    </div>
+      </footer>
     </div>
   );
 }
