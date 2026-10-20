@@ -18,7 +18,7 @@ import cursoTiki from "./assets/cursos/cursotiki.jpg";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0F1115] text-white font-['Plus_Jakarta_Sans']">
+      <div className="min-h-screen bg-[#0F1115] text-white font-['Plus_Jakarta_Sans']">
       {/* HEADER (global) */}
       <header className="absolute top-0 left-0 right-0 z-30 border-b border-white/30">
         <div className="mx-auto max-w-6xl flex items-center justify-between px-6 h-[80px]">
@@ -66,16 +66,16 @@ export default function App() {
 
 
   {/* CONTENIDO */}
-  <div className="relative z-10 mx-auto max-w-7xl px-8 pt-16 md:pt-24">
-    <div className="flex justify-between items-start">
-      <div className="max-w-xl text-left">
-        <h1 className="mt-5 text-5xl md:text-7xl font-semibold tracking-tight text-white leading-[1.05]">
-          Tu carrera como bartender empieza hoy
-        </h1>
+  <div className="relative z-10 mx-auto max-w-7xl px-4 pt-20 sm:px-8 md:pt-24">
+  <div className="flex flex-col items-start justify-between md:flex-row md:items-start">
+    <div className="w-full max-w-xl text-left md:-ml-10">
+      <h1 className="mt-5 text-[2.2rem] leading-[1.05] font-semibold tracking-tight text-white sm:text-4xl md:text-6xl md:leading-[1.1] md:max-w-[680px]">
+        Elevá tu evento con una experiencia de coctelería premium.
+      </h1>
 
-        <p className="mt-6 max-w-md text-white/80 text-[16px] leading-relaxed">
-          Formación intensiva · Prácticas detrás de barra · Inserción laboral.
-        </p>
+      <p className="mt-6 max-w-md text-sm text-white/80 leading-relaxed sm:text-[16px]">
+        Barras móviles, coctelería de autor y servicio profesional para celebraciones únicas.
+      </p>
 
         <div className="mt-30 flex flex-col sm:flex-row gap-4">
 
@@ -83,7 +83,7 @@ export default function App() {
             href="#cursos"
             className="inline-flex items-center justify-center rounded-full bg-[#C65D3A] px-7 py-3 text-sm font-semibold text-white hover:bg-[#A84E30] transition"
           >
-            Ver próximos cursos
+            Cotizá tu evento
           </a>
 
           <a
@@ -101,18 +101,18 @@ export default function App() {
 
       <aside className="hidden md:flex flex-col gap-6 pl-6 mt-14" aria-label="Indicadores de confianza">
         <div>
-          <p className="text-2xl font-semibold text-white">+1200</p>
-          <p className="text-sm text-white/70 tracking-wide">Alumnos formados</p>
+          <p className="text-2xl font-semibold text-white">Coctelería de autor</p>
+          <p className="text-sm text-white/70 tracking-wide"> Experiencias diseñadas para cada ocasión</p>
         </div>
 
         <div>
-          <p className="text-2xl font-semibold text-white">Certificación</p>
-          <p className="text-sm text-white/70 tracking-wide">Profesional</p>
+          <p className="text-2xl font-semibold text-white">10+ años </p>
+          <p className="text-sm text-white/70 tracking-wide">De experiencia profesional</p>
         </div>
 
         <div>
-          <p className="text-2xl font-semibold text-white">4.9★</p>
-          <p className="text-sm text-white/70 tracking-wide">en Google Maps</p>
+          <p className="text-2xl font-semibold text-white">Servicio premium</p>
+          <p className="text-sm text-white/70 tracking-wide">Cada detalle hace la diferencia</p>
         </div>
       </aside>
     </div>
@@ -131,11 +131,10 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-10">
               <h2 className="text-4xl font-semibold text-white">
-                Elegí cómo empezar tu carrera en barra
+                Una experiencia a la altura de cada ocasión
               </h2>
               <p className="text-white/70 mt-3 max-w-2xl">
-                Programas diseñados para distintos niveles, tiempos y objetivos
-                profesionales.
+                Desde celebraciones privadas hasta eventos corporativos, creamos propuestas de coctelería adaptadas a cada momento.
               </p>
             </div>
 
@@ -152,7 +151,7 @@ export default function App() {
                   {/* IMAGEN */}
                   <img
                     src={cursoInicial}
-                    alt="Bartender Inicial"
+                    alt="Bodas y celebraciones"
                     className="absolute inset-0 h-full w-full object-cover transition-all duration-300 group-hover:opacity-0"
                   />
 
@@ -163,21 +162,12 @@ export default function App() {
                   {/* CONTENIDO (NORMAL) */}
                   <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
                     <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Bartender Inicial
+                      Bodas y celebraciones
                     </h3>
 
-                    <div className="flex flex-col gap-3 mt-auto">
-                      <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
-                        Ideal para empezar
-                      </span>
+                    <div className="flex flex-col gap-3 mt-auto"> 
 
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        De cero a bartender.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
+                  
                     </div>
                   </div>
 
@@ -187,17 +177,17 @@ export default function App() {
 
                     <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
                       <p className="text-white text-lg font-semibold">
-                        Lo que incluye esta formación
+                        Tu celebración, nuestra experiencia
                       </p>
 
                       <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        8 clases <br />
-                        3 hs máximo <br />
-                        1 vez por semana
+                        Barras móviles personalizadas <br />
+                        Bartenders profesionales <br />
+                        Coctelería clásica y de autor
                       </p>
 
                       <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-                        Ideal para comenzar desde cero y ganar seguridad detrás de la barra
+                        Creamos experiencias únicas para acompañar los momentos más especiales. 
                       </p>
 
                       <a
@@ -206,7 +196,7 @@ export default function App() {
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
 >
-  Reservar clase
+  Cotizar mi evento
 </a>
 
                     </div>
@@ -224,7 +214,7 @@ export default function App() {
                   {/* IMAGEN */}
                   <img
                     src={cursoAcademia}
-                    alt="Carrera Bartender presencial"
+                    alt="Eventos corporativos"
                     className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
                   />
 
@@ -235,21 +225,15 @@ export default function App() {
                   {/* CONTENIDO NORMAL */}
                   <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
                     <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Carrera Bartender Presencial
+                      Eventos corporativos
                     </h3>
 
                     <div className="flex flex-col gap-3 mt-auto">
                       <span className="inline-flex w-fit items-center gap-2 text-[11px] tracking-widest uppercase font-semibold text-white bg-[#C65D3A] px-3 py-1 rounded-full">
-                        ⭐ Carrera profesional
+                        ⭐ Descuento especial para empresas
                       </span>
 
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        Formate en academias reales y entrená detrás de barra.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
+                      
                     </div>
                   </div>
 
@@ -259,26 +243,26 @@ export default function App() {
 
                     <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
                       <p className="text-white text-lg font-semibold">
-                        Estructura del curso
+                        Elevá la experiencia de tu evento
                       </p>
 
                       <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        6 clases totales <br />
-                        4 encuentros virtuales <br />
-                        2 encuentros presenciales
+                        Barras profesionales para empresas<br />
+                        Coctelería clásica y de autor<br />
+                        Servicio adaptado a cada ocasión
                       </p>
 
                       <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-                        Práctica en academia real + acompañamiento
+                        Una propuesta de coctelería que combina profesionalismo, calidad y atención a cada detalle.
                       </p>
 
-                     <a
+                    <a
   href="https://wa.me/5491154708191?text=Quiero%20inscribirme%20a%20la%20carrera%20de%20bartender.%20%C2%BFPodr%C3%ADan%20pasarme%20informaci%C3%B3n%20sobre%20fechas%20y%20requisitos?"
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
 >
-  Inscribirme a la carrera
+  Solicitar presupuesto
 </a>
 
                     </div>
@@ -294,7 +278,7 @@ export default function App() {
                   {/* IMAGEN */}
                   <img
                     src={cursoTiki}
-                    alt="Tiki Coctél Experience"
+                    alt="Fiestas privadas"
                     className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
                   />
 
@@ -305,21 +289,15 @@ export default function App() {
                   {/* CONTENIDO NORMAL */}
                   <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
                     <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-                      Talleres 
+                      Fiestas privadas
                     </h3>
 
                     <div className="flex flex-col gap-3 mt-auto">
                       <span className="inline-flex w-fit text-[11px] tracking-widest uppercase font-semibold text-white/90 bg-white/20 backdrop-blur px-3 py-1 rounded-full">
-                        Edición especial - TIKI
+                        Celebrá de una manera diferente
                       </span>
 
-                      <p className="text-white/85 text-sm leading-relaxed max-w-[26ch]">
-                        Workshop exclusivo: sabores exóticos y técnica profesional.
-                      </p>
-
-                      <span className="inline-flex items-center text-white font-semibold">
-                        Ver detalle →
-                      </span>
+                        
                     </div>
                   </div>
 
@@ -333,13 +311,13 @@ export default function App() {
                       </p>
 
                       <p className="mt-3 text-white/90 text-sm leading-relaxed">
-                        1 clase <br />
-                        4 hs <br />
-                        Presencial
+                        Barras móviles para celebraciones<br />
+                        Cócteles clásicos y personalizados <br />
+                        Bartenders profesionales
                       </p>
 
                       <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-                        Incluye práctica guiada + material de apoyo
+                        Convertí tu cumpleaños, aniversario o celebración privada en una experiencia para recordar.
                       </p>
 
                       <a
@@ -348,14 +326,14 @@ export default function App() {
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
 >
-  Reservar taller
+  Cotizar mi fiesta
 </a>
 
                     </div>
                   </div>
                 </a>
               </li>
-             <li>
+              <li>
   <a
     href="#contacto"
     className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
@@ -363,7 +341,7 @@ export default function App() {
     {/* IMAGEN */}
     <img
       src={barraMovil}
-      alt="Servicio de barras móviles para eventos"
+      alt="Barras personalizadas"
       className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
     />
 
@@ -374,7 +352,7 @@ export default function App() {
     {/* CONTENIDO NORMAL */}
     <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
       <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
-        Barras móviles para eventos
+        Barras personalizadas
       </h3>
 
       <div className="flex flex-col gap-3 mt-auto">
@@ -398,17 +376,17 @@ export default function App() {
 
       <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
         <p className="text-white text-lg font-semibold">
-          Servicio integral
+          Una barra diseñada para tu evento
         </p>
 
         <p className="mt-3 text-white/90 text-sm leading-relaxed">
-          Barras móviles elegantes <br />
-          Bartenders profesionales <br />
-          Cristalería + insumos incluidos
+          Propuestas a medida <br />
+          Selección personalizada de cócteles <br />
+          Presentación y servicio profesional
         </p>
 
         <p className="mt-4 text-white/60 text-xs max-w-[26ch]">
-          Montaje, operación y experiencia pensada para que tu evento sea inolvidable.
+          Diseñamos una experiencia de coctelería que se adapta al estilo y la identidad de cada celebración.
         </p>
 
         <a
@@ -417,7 +395,7 @@ export default function App() {
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
 >
-  Solicitar presupuesto
+  Personalizar mi barra
 </a>
 
       </div>
@@ -437,7 +415,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-8">
             <div className="mb-12 max-w-2xl">
               <h2 className="text-4xl md:text-5xl font-semibold">
-                ¿Por qué elegirnos?
+                La experiencia Drink Company
               </h2>
             </div>
 
@@ -446,15 +424,15 @@ export default function App() {
               <div className="space-y-8">
                 <div className="flex gap-3 flex-wrap">
                   <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
-                    +6 años formando profesionales
+                    10+ años de experiencia
                   </div>
 
                   <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
-                    Certificación internacional profesional
+                    Coctelería de autor
                   </div>
 
                   <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
-                    Reconocimiento en AMBA
+                    Servicio personalizado
                   </div>
                 </div>
 
@@ -463,29 +441,61 @@ export default function App() {
                    {/* TEXTO AUTORIDAD */}
 <div className="max-w-2xl">
   <p className="text-white/85 text-[17px] leading-relaxed">
-   En <span className="font-semibold">Drink Company</span> formamos bartenders con un programa certificado y alineado a las exigencias reales de la industria. Brindamos capacitación técnica, práctica profesional y todos los materiales necesarios —recetarios y libreta de curso— para que aprendas con estructura, confianza y proyección laboral desde el primer día.
+    En <span className="font-semibold">Drink Company</span> transformamos cada celebración en una experiencia de coctelería única. Combinamos bartenders profesionales, propuestas personalizadas y atención a cada detalle para ofrecer un servicio que se adapta al estilo y las necesidades de cada evento.
   </p>
 </div>
+
+<div className="mt-8 grid gap-4 sm:grid-cols-3">
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div className="mb-3 h-2.5 w-12 rounded-full bg-[#C65D3A]" />
+      
+      <h3 className="text-lg font-semibold text-white"> <span>🍸</span>Coctelería de calidad</h3>
+      <p className="mt-2 text-sm text-white/70">
+        Una selección de cócteles clásicos y de autor, preparados con técnica, creatividad y atención a la presentación.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div className="mb-3 h-2.5 w-12 rounded-full bg-[#C65D3A]" />
+      <h3 className="text-lg font-semibold text-white">✨Atención profesional</h3>
+      <p className="mt-2 text-sm text-white/70">
+        Bartenders con experiencia que brindan un servicio cuidado, dinámico y adaptado al ritmo de cada celebración.
+      </p>
+    </div>
+
+    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+      <div className="mb-3 h-2.5 w-12 rounded-full bg-[#C65D3A]" />
+      <h3 className="text-lg font-semibold text-white">⭐Experiencias a medida</h3>
+      <p className="mt-2 text-sm text-white/70">
+        Propuestas personalizadas según el tipo de evento, la cantidad de invitados y las preferencias de cada cliente.
+      </p>
+    </div>
+  </div>
+
 
                 <div className="space-y-6 max-w-none md:translate-x-0" aria-label="Testimonios">
                   {/* 1 */}
                   <article
                     className="flex items-start justify-between gap-5 bg-black/20 backdrop-blur-sm border border-white/5 rounded-2xl p-5 transition hover:bg-black/25"
-                    aria-label="Testimonio de Daiana C."
+                    aria-label="Maria Florencia Gonzalez"
                   >
                     <div className="flex items-start gap-5 flex-1">
                       <img
                         src={daiana}
-                        alt="Daiana C."
+                        alt="Maria Florencia Gonzalez "
                         className="h-14 w-14 rounded-full object-cover"
                       />
 
                       <div>
                         <p className="text-[15px] leading-relaxed text-white/85">
-                          “Empecé de cero y hoy ya estoy trabajando gracias a todo lo que aprendí. Ramiro es un guía claro, exigente y comprometido con tu crecimiento.”
+                            "todo excelente ! súper recomendable ⭐️⭐️⭐️⭐️⭐️
+                            La barra impecable y Ramiro un genio y buena onda. Muy atento y copado con todos los invitados.
+                            El cumpleaños salió hermoso y todos encantados con los tragos 🍸🩷
+
+                            es la segunda vez que contratamos el servicio y sin duda vamos a volver a hacerlo !"
                         </p>
                         <p className="mt-2 text-sm font-semibold text-white">
-                          — Daiana C · Bartender Profesional
+                          — Maria Florencia Gonzalez · Cliente de Drink company
                         </p>
                       </div>
                     </div>
@@ -509,10 +519,10 @@ export default function App() {
 
                       <div>
                         <p className="text-[15px] leading-relaxed text-white/85">
-                          “La dedicación y el nivel de enseñanza marcan la diferencia. Hoy aplico estas técnicas todos los días detrás de la barra.”
+                          “Excelente servicio, si estás buscando contratar una barra que te ofrezca bebidas y tragos de calidad, no dudes en contratar a Ramiro y a su equipo. Estuvieron en el cumpleaños de 15 de mi hija en Victoria PALACE y los volveremos a contratar para los 50 de marido. Cumplieron con todo y mucho más.”
                         </p>
                         <p className="mt-2 text-sm font-semibold text-white">
-                          — Martin R. · Formación en Coctelería
+                          — Maria Alison · Cliente de Drink company
                         </p>
                       </div>
                     </div>
@@ -536,10 +546,10 @@ export default function App() {
 
                       <div>
                         <p className="text-[15px] leading-relaxed text-white/85">
-                          “Gracias a esta formación hoy trabajo en barra y estoy poniendo en práctica todo lo aprendido.”
+                          “Impecable servicio, buena onda y predisposición, muy buena calidad, la verdad están en todo! Súper recomendable! ☺️”
                         </p>
                         <p className="mt-2 text-sm font-semibold text-white">
-                          — Marcelo G. · Bartender Internacional
+                          — Sabrina GFonzalez · Cliente de Drink company
                         </p>
                       </div>
                     </div>
@@ -554,7 +564,7 @@ export default function App() {
               {/* DERECHA */}
 <aside className="space-y-6 flex flex-col items-end md:-mt-10" aria-label="Profesor destacado">
   <h3 className="text-2xl font-semibold self-end w-[320px] text-left">
-    Profesores de calidad
+    Profesionales de calidad
   </h3>
 
   <div className="rounded-3xl overflow-hidden bg-white/[0.02] backdrop-blur-sm border border-white/15 w-[320px]">
@@ -565,12 +575,12 @@ export default function App() {
     />
 
     <div className="pt-3 pb-6 px-6 bg-black/50">
-     <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2">
   <p className="text-lg font-semibold text-white -ml-1">
     Ramiro Cardozo
   </p>
 
- <a
+  <a
   href="https://www.instagram.com/_u/ramacocktail12/"
   target="_blank"
   rel="noopener noreferrer"
@@ -632,13 +642,12 @@ export default function App() {
 
   <div className="max-w-4xl mx-auto px-8 text-center">
     <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.1]">
-      De alumno a profesional
-     </h2>
+      Hagamos de tu evento algo extraordinario.
+      </h2>
 
 
     <p className="mt-5 text-white/70 text-lg max-w-2xl mx-auto">
-      Formamos profesionales preparados para desempeñarse con seguridad,
-      técnica y criterio en una barra real.
+      Contanos qué estás planeando y diseñemos juntos una experiencia de coctelería a la altura de tu celebración.
     </p>
 
     <a
@@ -647,7 +656,7 @@ export default function App() {
       rel="noopener noreferrer"
       className="inline-block mt-10 px-8 py-4 rounded-full bg-[#C65D3A] hover:bg-[#A84E30] text-white font-semibold transition-transform hover:scale-[1.03]"
     >
-      Empezá tu transformación
+      Cotizá tu evento
     </a>
   </div>
 </section>
@@ -668,7 +677,8 @@ export default function App() {
               </h3>
 
               <p className="mt-3 text-white/60 max-w-xs">
-                Formamos bartenders con estándares profesionales para la industria real.
+
+                Experiencias de coctelería, barras móviles y servicio profesional para eventos y celebraciones.
               </p>
             </div>
 
