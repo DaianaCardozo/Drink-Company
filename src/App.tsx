@@ -1,105 +1,123 @@
+import { useState } from "react";
 import logo from "./assets/logo.png";
 import hero from "./assets/hero.jpg";
 import profesor from "./assets/profesor.jpg";
 
-
-
 import daiana from "./assets/avatars/daiana.png";
 import marcelo from "./assets/avatars/marcelo.jpg";
 import martin from "./assets/avatars/martin.jpg";
-
-
 
 import cursoAcademia from "./assets/cursos/cursoacademia.jpg";
 import cursoInicial from "./assets/cursos/cursoinicial.jpg";
 import barraMovil from "./assets/cursos/barramovil.jpg";
 import cursoTiki from "./assets/cursos/cursotiki.jpg";
 
-
 export default function App() {
+  const [menuAbierto, setMenuAbierto] = useState(false);
+  const [tarjetaActiva, setTarjetaActiva] = useState<number | null>(null);
   return (
-      <div className="min-h-screen bg-[#0F1115] text-white font-['Plus_Jakarta_Sans']">
-      {/* HEADER (global) */}
-      <header className="absolute top-0 left-0 right-0 z-30 border-b border-white/30">
-        <div className="mx-auto max-w-6xl flex items-center justify-between px-6 h-[80px]">
-          <a href="#home" className="flex items-center -ml-20 translate-y-[3px]" aria-label="Ir al inicio">
-            <img
-              src={logo}
-              alt="Drink Company"
-              className="h-[115px] w-auto object-contain"
-            />
+    <div className="min-h-screen bg-[#0F1115] text-white font-['Plus_Jakarta_Sans']">
+
+      {/* HEADER RESPONSIVE */}
+      <header className="absolute inset-x-0 top-0 z-30 border-b border-white/30">
+        <div className="mx-auto flex h-[80px] max-w-6xl items-center justify-between px-5 sm:px-8 md:h-[90px]">
+          <a href="#home" className="flex shrink-0 items-center md:-ml-12" aria-label="Ir al inicio" onClick={() => setMenuAbierto(false)}>
+            <img src={logo} alt="Drink Company" className="h-[76px] w-auto object-contain md:h-[100px]" />
           </a>
 
-          <nav
-  className="flex h-[72px] items-end gap-10 pb-3 text-lg font-semibold text-white/90"
-  aria-label="Navegación principal"
->
-  <a href="#cursos" className="hover:text-white transition">
-    Cursos
-  </a>
-  <a href="#servicios" className="hover:text-white transition">
-    Servicios
-  </a>
-  <a href="#contacto" className="hover:text-white transition">
-    Contacto
-  </a>
-</nav>
+          {/* Menú de escritorio */}
+          <nav className="hidden items-center gap-10 text-lg font-semibold text-white/90 md:flex" aria-label="Navegación principal">
+            <a href="#cursos" className="transition hover:text-white">Eventos</a>
+            <a href="#servicios" className="transition hover:text-white">Servicios</a>
+            <a href="#contacto" className="transition hover:text-white">Contacto</a>
+          </nav>
 
+          {/* Botón de menú para celulares */}
+          <button
+            type="button"
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-white/25 bg-black/30 md:hidden"
+            aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuAbierto}
+            aria-controls="menu-mobile"
+            onClick={() => setMenuAbierto(!menuAbierto)}
+          >
+            {menuAbierto ? (
+              <span aria-hidden="true" className="text-2xl leading-none">×</span>
+            ) : (
+              <span aria-hidden="true" className="flex flex-col gap-[5px]">
+                <span className="block h-[2px] w-5 bg-white" />
+                <span className="block h-[2px] w-5 bg-white" />
+                <span className="block h-[2px] w-5 bg-white" />
+              </span>
+            )}
+          </button>
         </div>
+        {menuAbierto && (
+          <nav id="menu-mobile" aria-label="Navegación móvil" className="absolute inset-x-0 top-[80px] flex flex-col gap-1 border-b border-white/15 bg-[#0F1115]/95 px-6 py-4 shadow-xl backdrop-blur-lg md:hidden">
+            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#cursos" onClick={() => setMenuAbierto(false)}>Eventos</a>
+            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#servicios" onClick={() => setMenuAbierto(false)}>Servicios</a>
+            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#contacto" onClick={() => setMenuAbierto(false)}>Contacto</a>
+          </nav>
+        )}
       </header>
 
       <main>
+
         {/* HERO */}
-<section id="home" className="relative h-[640px] overflow-hidden">
-  
-  {/* IMAGEN + OVERLAYS */}
-  <div className="absolute inset-0">
-    <img
-      src={hero}
-      alt="Bartender preparando un cocktail"
-      className="h-full w-full object-cover"
-    />
-    <div className="absolute inset-0 bg-black/40" />
-    <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent" />
-  </div>
+        <section id="home" className="relative min-h-[690px] overflow-hidden sm:min-h-[640px]">
 
+          {/* IMAGEN + OVERLAYS */}
+          <div className="absolute inset-0">
+            <img
+              src={hero}
+              alt="Bartender preparando un cocktail"
+              className="h-full w-full object-cover"
+            />
 
+            <div className="absolute inset-0 bg-black/40" />
 
-  {/* CONTENIDO */}
-  <div className="relative z-10 mx-auto max-w-7xl px-4 pt-20 sm:px-8 md:pt-24">
-  <div className="flex flex-col items-start justify-between md:flex-row md:items-start">
-    <div className="w-full max-w-xl text-left md:-ml-10">
-      <h1 className="mt-5 text-[2.2rem] leading-[1.05] font-semibold tracking-tight text-white sm:text-4xl md:text-6xl md:leading-[1.1] md:max-w-[680px]">
-        Elevá tu evento con una experiencia de coctelería premium.
-      </h1>
+            <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/40 to-transparent" />
+          </div>
+
+          {/* CONTENIDO */}
+          <div className="relative z-10 mx-auto max-w-7xl px-5 pt-32 pb-24 sm:px-8 md:pt-32">
+
+            <div className="flex flex-col items-start justify-between md:flex-row md:items-start">
+
+              <div className="w-full max-w-xl text-left lg:-ml-10">
+
+                <h1 className="mt-5 text-[clamp(2rem,8vw,3.5rem)] leading-[1.12] font-semibold tracking-tight text-white md:text-6xl md:leading-[1.1] md:max-w-[680px]">
+                  Elevá tu evento con una experiencia de coctelería premium.
+                </h1>
+
 
       <p className="mt-6 max-w-md text-sm text-white/80 leading-relaxed sm:text-[16px]">
         Barras móviles, coctelería de autor y servicio profesional para celebraciones únicas.
       </p>
 
-        <div className="mt-30 flex flex-col sm:flex-row gap-4">
+        <div className="mt-10 flex flex-col gap-3 sm:mt-16 sm:flex-row sm:gap-4 lg:mt-30">
 
           <a
-            href="#cursos"
+            href="#contacto"
             className="inline-flex items-center justify-center rounded-full bg-[#C65D3A] px-7 py-3 text-sm font-semibold text-white hover:bg-[#A84E30] transition"
           >
             Cotizá tu evento
           </a>
 
           <a
-  href="https://wa.me/5491154708191?text=Hola!%20Quiero%20informaci%C3%B3n%20sobre%20los%20cursos%20de%20bartender.%20%C2%BFPodr%C3%ADan%20pasarme%20fechas%2C%20precios%20y%20modalidad%3F"
+  href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20de%20cocteler%C3%ADa%20para%20un%20evento."
 
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur px-7 py-3 text-sm font-semibold text-white hover:bg-white/20 transition"
 >
-  Inscribite por WhatsApp
+  Contactanos por WhatsApp
 </a>
 
         </div>
       </div>
 
-      <aside className="hidden md:flex flex-col gap-6 pl-6 mt-14" aria-label="Indicadores de confianza">
+      <aside className="hidden lg:flex flex-col gap-6 pl-6 mt-14" aria-label="Indicadores de confianza">
         <div>
           <p className="text-2xl font-semibold text-white">Coctelería de autor</p>
           <p className="text-sm text-white/70 tracking-wide"> Experiencias diseñadas para cada ocasión</p>
@@ -126,11 +144,11 @@ export default function App() {
         {/* SECCIÓN: CURSOS (AHORA VA ACÁ) */}
         <section
           id="cursos"
-          className="pt-6 pb-20 bg-gradient-to-b from-[#0F1115] via-[#0B0D10] to-[#0F1115]"
+          className="pt-8 pb-20 bg-gradient-to-b from-[#0F1115] via-[#0B0D10] to-[#0F1115]"
         >
-          <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="mb-10">
-              <h2 className="text-4xl font-semibold text-white">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-white">
                 Una experiencia a la altura de cada ocasión
               </h2>
               <p className="text-white/70 mt-3 max-w-2xl">
@@ -139,28 +157,71 @@ export default function App() {
             </div>
 
             <ul
-              className="grid gap-7 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch"
-              aria-label="Listado de cursos"
+              className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7 items-stretch"
+              aria-label="Servicios para eventos" id="servicios"
             >
             
               <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
+                {/* Tarjeta táctil: tocar para abrir, volver a tocar para cerrar */}
+                <div className="relative isolate h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-[#0F1115] shadow-sm sm:h-[420px] lg:hidden">
+                  <img src={cursoInicial} alt="Bodas y celebraciones" className="absolute inset-0 h-full w-full object-cover" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/35" />
+
+                  {tarjetaActiva !== 0 && (
+                    <button
+                      type="button"
+                      aria-label="Ver detalles de Bodas y celebraciones"
+                      aria-expanded={false}
+                      onClick={() => setTarjetaActiva(0)}
+                      className="absolute inset-0 z-10 flex h-full w-full flex-col items-start justify-between p-6 text-left"
+                    >
+                      <h3 className="max-w-[18ch] text-2xl font-semibold leading-tight text-white">Bodas y celebraciones</h3>
+                      <span className="rounded-full border border-white/25 bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">Tocá para ver detalles +</span>
+                    </button>
+                  )}
+
+                  {tarjetaActiva === 0 && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-5 text-center sm:p-7">
+                      <div className="absolute inset-0 bg-black/95" />
+                      <button
+                        type="button"
+                        aria-label="Cerrar detalles de Bodas y celebraciones"
+                        onClick={() => setTarjetaActiva(null)}
+                        className="absolute inset-0 z-10 h-full w-full cursor-pointer"
+                      />
+                      <div className="pointer-events-none relative z-20 flex w-full flex-col items-center gap-3">
+                        <p className="text-lg font-semibold text-white">Tu celebración, nuestra experiencia</p>
+                        <p className="flex flex-col text-sm leading-relaxed text-white/90">
+                        <span>Barras móviles personalizadas</span>
+                        <span>Bartenders profesionales</span>
+                        <span>Coctelería clásica y de autor</span>
+                        </p>
+                        <p className="max-w-[30ch] text-xs leading-relaxed text-white/65">Creamos experiencias únicas para acompañar los momentos más especiales.</p>
+                        <a
+                          href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20bodas%20y%20celebraciones%20de%20Drink%20Company."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pointer-events-auto mt-3 inline-flex min-h-11 items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition active:scale-[0.98]"
+                        >Cotizar mi evento</a>
+                        <button type="button" onClick={() => setTarjetaActiva(null)} className="pointer-events-auto mt-1 px-3 py-2 text-xs text-white/70 underline underline-offset-4">Cerrar detalles</button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="group relative hidden h-[360px] overflow-hidden rounded-3xl border border-white/10 bg-[#17191e] shadow-sm lg:block">
                   {/* IMAGEN */}
                   <img
                     src={cursoInicial}
                     alt="Bodas y celebraciones"
-                    className="absolute inset-0 h-full w-full object-cover transition-all duration-300 group-hover:opacity-0"
+                    className="absolute inset-x-0 top-0 h-[195px] w-full object-cover transition-all duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0"
                   />
 
                   {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/45 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+                  <div className="absolute inset-x-0 top-0 h-[195px] bg-black/45 transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
+                  <div className="absolute inset-x-0 top-0 h-[195px] bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
 
                   {/* CONTENIDO (NORMAL) */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
+                  <div className="relative z-10 flex h-[195px] flex-col pl-5 pr-8 pt-6 pb-6 transition-opacity duration-200 lg:h-full lg:group-hover:opacity-0">
                     <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
                       Bodas y celebraciones
                     </h3>
@@ -172,10 +233,10 @@ export default function App() {
                   </div>
 
                   {/* OVERLAY (HOVER) */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
+                  <div className="relative z-20 opacity-100 transition-opacity duration-200 lg:absolute lg:inset-0 lg:z-30 lg:opacity-0 lg:group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-[#17191e] lg:bg-black/95" />
 
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
+                    <div className="relative flex h-full flex-col items-center justify-center p-5 text-center lg:p-6">
                       <p className="text-white text-lg font-semibold">
                         Tu celebración, nuestra experiencia
                       </p>
@@ -191,7 +252,7 @@ export default function App() {
                       </p>
 
                       <a
-  href="https://wa.me/5491154708191?text=Quiero%20reservar%20una%20clase.%20%C2%BFPodr%C3%ADan%20pasarme%20disponibilidad?"
+  href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20de%20cocteler%C3%ADa%20para%20un%20evento."
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
@@ -201,29 +262,72 @@ export default function App() {
 
                     </div>
                   </div>
-                </a>
+                </div>
               </li>
 
               
 
               <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
+                {/* Tarjeta táctil: tocar para abrir, volver a tocar para cerrar */}
+                <div className="relative isolate h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-[#0F1115] shadow-sm sm:h-[420px] lg:hidden">
+                  <img src={cursoAcademia} alt="Eventos corporativos" className="absolute inset-0 h-full w-full object-cover" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/35" />
+
+                  {tarjetaActiva !== 1 && (
+                    <button
+                      type="button"
+                      aria-label="Ver detalles de Eventos corporativos"
+                      aria-expanded={false}
+                      onClick={() => setTarjetaActiva(1)}
+                      className="absolute inset-0 z-10 flex h-full w-full flex-col items-start justify-between p-6 text-left"
+                    >
+                      <h3 className="max-w-[18ch] text-2xl font-semibold leading-tight text-white">Eventos corporativos</h3>
+                      <span className="rounded-full border border-white/25 bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">Tocá para ver detalles +</span>
+                    </button>
+                  )}
+
+                  {tarjetaActiva === 1 && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-5 text-center sm:p-7">
+                      <div className="absolute inset-0 bg-black/95" />
+                      <button
+                        type="button"
+                        aria-label="Cerrar detalles de Eventos corporativos"
+                        onClick={() => setTarjetaActiva(null)}
+                        className="absolute inset-0 z-10 h-full w-full cursor-pointer"
+                      />
+                      <div className="pointer-events-none relative z-20 flex w-full flex-col items-center gap-3">
+                        <p className="text-lg font-semibold text-white">Elevá la experiencia de tu evento</p>
+                        <p className="flex flex-col text-sm leading-relaxed text-white/90">
+                        <span>Barras profesionales para empresas</span>
+                        <span>Coctelería clásica y de autor</span>
+                        <span>Servicio adaptado a cada ocasión</span>
+                        </p>
+                        <p className="max-w-[30ch] text-xs leading-relaxed text-white/65">Una propuesta de coctelería que combina profesionalismo, calidad y atención a cada detalle.</p>
+                        <a
+                          href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20eventos%20corporativos%20de%20Drink%20Company."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pointer-events-auto mt-3 inline-flex min-h-11 items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition active:scale-[0.98]"
+                        >Solicitar presupuesto</a>
+                        <button type="button" onClick={() => setTarjetaActiva(null)} className="pointer-events-auto mt-1 px-3 py-2 text-xs text-white/70 underline underline-offset-4">Cerrar detalles</button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="group relative hidden h-[360px] overflow-hidden rounded-3xl border border-white/10 bg-[#17191e] shadow-sm lg:block">
                   {/* IMAGEN */}
                   <img
                     src={cursoAcademia}
                     alt="Eventos corporativos"
-                    className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    className="absolute inset-x-0 top-0 h-[195px] w-full object-cover transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0"
                   />
 
                   {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+                  <div className="absolute inset-x-0 top-0 h-[195px] bg-black/50 transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
+                  <div className="absolute inset-x-0 top-0 h-[195px] bg-gradient-to-t from-black/90 via-black/35 to-transparent transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
 
                   {/* CONTENIDO NORMAL */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
+                  <div className="relative z-10 flex h-[195px] flex-col pl-5 pr-8 pt-6 pb-6 transition-opacity duration-200 lg:h-full lg:group-hover:opacity-0">
                     <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
                       Eventos corporativos
                     </h3>
@@ -238,10 +342,10 @@ export default function App() {
                   </div>
 
                   {/* OVERLAY */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
+                  <div className="relative z-20 opacity-100 transition-opacity duration-200 lg:absolute lg:inset-0 lg:z-30 lg:opacity-0 lg:group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-[#17191e] lg:bg-black/95" />
 
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
+                    <div className="relative flex h-full flex-col items-center justify-center p-5 text-center lg:p-6">
                       <p className="text-white text-lg font-semibold">
                         Elevá la experiencia de tu evento
                       </p>
@@ -257,7 +361,7 @@ export default function App() {
                       </p>
 
                     <a
-  href="https://wa.me/5491154708191?text=Quiero%20inscribirme%20a%20la%20carrera%20de%20bartender.%20%C2%BFPodr%C3%ADan%20pasarme%20informaci%C3%B3n%20sobre%20fechas%20y%20requisitos?"
+  href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20de%20cocteler%C3%ADa%20para%20un%20evento."
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
@@ -267,27 +371,70 @@ export default function App() {
 
                     </div>
                   </div>
-                </a>
+                </div>
               </li>
 
               <li>
-                <a
-                  href="#contacto"
-                  className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-                >
+                {/* Tarjeta táctil: tocar para abrir, volver a tocar para cerrar */}
+                <div className="relative isolate h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-[#0F1115] shadow-sm sm:h-[420px] lg:hidden">
+                  <img src={cursoTiki} alt="Fiestas privadas" className="absolute inset-0 h-full w-full object-cover" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/35" />
+
+                  {tarjetaActiva !== 2 && (
+                    <button
+                      type="button"
+                      aria-label="Ver detalles de Fiestas privadas"
+                      aria-expanded={false}
+                      onClick={() => setTarjetaActiva(2)}
+                      className="absolute inset-0 z-10 flex h-full w-full flex-col items-start justify-between p-6 text-left"
+                    >
+                      <h3 className="max-w-[18ch] text-2xl font-semibold leading-tight text-white">Fiestas privadas</h3>
+                      <span className="rounded-full border border-white/25 bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">Tocá para ver detalles +</span>
+                    </button>
+                  )}
+
+                  {tarjetaActiva === 2 && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-5 text-center sm:p-7">
+                      <div className="absolute inset-0 bg-black/95" />
+                      <button
+                        type="button"
+                        aria-label="Cerrar detalles de Fiestas privadas"
+                        onClick={() => setTarjetaActiva(null)}
+                        className="absolute inset-0 z-10 h-full w-full cursor-pointer"
+                      />
+                      <div className="pointer-events-none relative z-20 flex w-full flex-col items-center gap-3">
+                        <p className="text-lg font-semibold text-white">Celebrá de una manera diferente</p>
+                        <p className="flex flex-col text-sm leading-relaxed text-white/90">
+                        <span>Barras móviles para celebraciones</span>
+                        <span>Cócteles clásicos y personalizados</span>
+                        <span>Bartenders profesionales</span>
+                        </p>
+                        <p className="max-w-[30ch] text-xs leading-relaxed text-white/65">Convertí tu cumpleaños, aniversario o celebración privada en una experiencia para recordar.</p>
+                        <a
+                          href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20fiestas%20privadas%20de%20Drink%20Company."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pointer-events-auto mt-3 inline-flex min-h-11 items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition active:scale-[0.98]"
+                        >Cotizar mi fiesta</a>
+                        <button type="button" onClick={() => setTarjetaActiva(null)} className="pointer-events-auto mt-1 px-3 py-2 text-xs text-white/70 underline underline-offset-4">Cerrar detalles</button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="group relative hidden h-[360px] overflow-hidden rounded-3xl border border-white/10 bg-[#17191e] shadow-sm lg:block">
                   {/* IMAGEN */}
                   <img
                     src={cursoTiki}
                     alt="Fiestas privadas"
-                    className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                    className="absolute inset-x-0 top-0 h-[195px] w-full object-cover transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0"
                   />
 
                   {/* CAPAS */}
-                  <div className="absolute inset-0 bg-black/45 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+                  <div className="absolute inset-x-0 top-0 h-[195px] bg-black/45 transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
+                  <div className="absolute inset-x-0 top-0 h-[195px] bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
 
                   {/* CONTENIDO NORMAL */}
-                  <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
+                  <div className="relative z-10 flex h-[195px] flex-col pl-5 pr-8 pt-6 pb-6 transition-opacity duration-200 lg:h-full lg:group-hover:opacity-0">
                     <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
                       Fiestas privadas
                     </h3>
@@ -302,10 +449,10 @@ export default function App() {
                   </div>
 
                   {/* OVERLAY */}
-                  <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <div className="absolute inset-0 bg-black/95" />
+                  <div className="relative z-20 opacity-100 transition-opacity duration-200 lg:absolute lg:inset-0 lg:z-30 lg:opacity-0 lg:group-hover:opacity-100">
+                    <div className="absolute inset-0 bg-[#17191e] lg:bg-black/95" />
 
-                    <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
+                    <div className="relative flex h-full flex-col items-center justify-center p-5 text-center lg:p-6">
                       <p className="text-white text-lg font-semibold">
                         Agenda tu aventura hoy
                       </p>
@@ -321,7 +468,7 @@ export default function App() {
                       </p>
 
                       <a
-  href="https://wa.me/5491154708191?text=Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20este%20taller."
+  href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20de%20cocteler%C3%ADa%20para%20un%20evento."
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
@@ -331,26 +478,69 @@ export default function App() {
 
                     </div>
                   </div>
-                </a>
+                </div>
               </li>
               <li>
-  <a
-    href="#contacto"
-    className="group relative h-[360px] rounded-3xl overflow-hidden border border-black/10 shadow-sm block"
-  >
+  {/* Tarjeta táctil: tocar para abrir, volver a tocar para cerrar */}
+                <div className="relative isolate h-[380px] overflow-hidden rounded-3xl border border-white/10 bg-[#0F1115] shadow-sm sm:h-[420px] lg:hidden">
+                  <img src={barraMovil} alt="Barras personalizadas" className="absolute inset-0 h-full w-full object-cover" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/35" />
+
+                  {tarjetaActiva !== 3 && (
+                    <button
+                      type="button"
+                      aria-label="Ver detalles de Barras personalizadas"
+                      aria-expanded={false}
+                      onClick={() => setTarjetaActiva(3)}
+                      className="absolute inset-0 z-10 flex h-full w-full flex-col items-start justify-between p-6 text-left"
+                    >
+                      <h3 className="max-w-[18ch] text-2xl font-semibold leading-tight text-white">Barras personalizadas</h3>
+                      <span className="rounded-full border border-white/25 bg-black/50 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm">Tocá para ver detalles +</span>
+                    </button>
+                  )}
+
+                  {tarjetaActiva === 3 && (
+                    <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-5 text-center sm:p-7">
+                      <div className="absolute inset-0 bg-black/95" />
+                      <button
+                        type="button"
+                        aria-label="Cerrar detalles de Barras personalizadas"
+                        onClick={() => setTarjetaActiva(null)}
+                        className="absolute inset-0 z-10 h-full w-full cursor-pointer"
+                      />
+                      <div className="pointer-events-none relative z-20 flex w-full flex-col items-center gap-3">
+                        <p className="text-lg font-semibold text-white">Una barra diseñada para tu evento</p>
+                        <p className="flex flex-col text-sm leading-relaxed text-white/90">
+                        <span>Propuestas a medida</span>
+                        <span>Selección personalizada de cócteles</span>
+                        <span>Presentación y servicio profesional</span>
+                        </p>
+                        <p className="max-w-[30ch] text-xs leading-relaxed text-white/65">Diseñamos una experiencia de coctelería que se adapta al estilo y la identidad de cada celebración.</p>
+                        <a
+                          href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20barras%20personalizadas%20de%20Drink%20Company."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pointer-events-auto mt-3 inline-flex min-h-11 items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition active:scale-[0.98]"
+                        >Personalizar mi barra</a>
+                        <button type="button" onClick={() => setTarjetaActiva(null)} className="pointer-events-auto mt-1 px-3 py-2 text-xs text-white/70 underline underline-offset-4">Cerrar detalles</button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="group relative hidden h-[360px] overflow-hidden rounded-3xl border border-white/10 bg-[#17191e] shadow-sm lg:block">
     {/* IMAGEN */}
     <img
       src={barraMovil}
       alt="Barras personalizadas"
-      className="absolute inset-0 h-full w-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+      className="absolute inset-x-0 top-0 h-[195px] w-full object-cover transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0"
     />
 
     {/* CAPAS */}
-    <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:opacity-0" />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+    <div className="absolute inset-x-0 top-0 h-[195px] bg-black/50 transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
+    <div className="absolute inset-x-0 top-0 h-[195px] bg-gradient-to-t from-black/85 via-black/35 to-transparent transition-opacity duration-300 lg:inset-0 lg:h-full lg:group-hover:opacity-0" />
 
     {/* CONTENIDO NORMAL */}
-    <div className="relative z-10 h-full pl-5 pr-8 pt-6 pb-6 flex flex-col transition-opacity duration-200 group-hover:opacity-0">
+    <div className="relative z-10 flex h-[195px] flex-col pl-5 pr-8 pt-6 pb-6 transition-opacity duration-200 lg:h-full lg:group-hover:opacity-0">
       <h3 className="text-white text-2xl font-semibold leading-tight max-w-[18ch]">
         Barras personalizadas
       </h3>
@@ -364,17 +554,15 @@ export default function App() {
           Experiencia de coctelería profesional para bodas, empresas y celebraciones privadas.
         </p>
 
-        <span className="inline-flex items-center text-white font-semibold">
-          Consultar disponibilidad →
-        </span>
+        
       </div>
     </div>
 
     {/* OVERLAY */}
-    <div className="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-      <div className="absolute inset-0 bg-black/95" />
+    <div className="relative z-20 opacity-100 transition-opacity duration-200 lg:absolute lg:inset-0 lg:z-30 lg:opacity-0 lg:group-hover:opacity-100">
+      <div className="absolute inset-0 bg-[#17191e] lg:bg-black/95" />
 
-      <div className="relative h-full p-6 flex flex-col items-center justify-center text-center">
+      <div className="relative flex h-full flex-col items-center justify-center p-5 text-center lg:p-6">
         <p className="text-white text-lg font-semibold">
           Una barra diseñada para tu evento
         </p>
@@ -390,7 +578,7 @@ export default function App() {
         </p>
 
         <a
-  href="https://wa.me/5491154708191?text=Quiero%20pedir%20un%20presupuesto%20para%20un%20evento.%20%C2%BFPodr%C3%ADan%20brindarme%20m%C3%A1s%20informaci%C3%B3n?"
+  href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20de%20cocteler%C3%ADa%20para%20un%20evento."
   target="_blank"
   rel="noopener noreferrer"
   className="inline-block mt-6 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm tracking-wide transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
@@ -400,7 +588,7 @@ export default function App() {
 
       </div>
     </div>
-  </a>
+  </div>
 </li>
 
             </ul>
@@ -408,30 +596,30 @@ export default function App() {
         </section>
 
         {/* SECCIÓN: ¿POR QUÉ ELEGIRNOS?  */}
-        <section className="relative z-20 -mt-24 pt-14 pb-24 rounded-t-[44px] bg-[#0F1115]">
+        <section className="relative z-20 pt-14 pb-20 lg:-mt-24 lg:pb-24 rounded-t-[32px] lg:rounded-t-[44px] bg-[#0F1115]">
           {/* Puente visual Hero → Sección */}
           <div className="pointer-events-none absolute inset-x-0 -top-24 h-24 bg-gradient-to-b from-black/0 via-[#0F1115]/60 to-[#0F1115]" />
 
-          <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="mb-12 max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-semibold">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold">
                 La experiencia Drink Company
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-[1.6fr_0.4fr] gap-8 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.6fr)_minmax(260px,0.6fr)] gap-8 items-start">
               {/* IZQUIERDA */}
               <div className="space-y-8">
                 <div className="flex gap-3 flex-wrap">
-                  <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
+                  <div className="px-4 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-xs sm:text-sm font-semibold text-white">
                     10+ años de experiencia
                   </div>
 
-                  <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
+                  <div className="px-4 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-xs sm:text-sm font-semibold text-white">
                     Coctelería de autor
                   </div>
 
-                  <div className="px-5 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-sm font-semibold whitespace-nowrap text-white">
+                  <div className="px-4 py-3 rounded-full bg-white/10 border border-white/15 shadow-sm text-xs sm:text-sm font-semibold text-white">
                     Servicio personalizado
                   </div>
                 </div>
@@ -476,14 +664,14 @@ export default function App() {
                 <div className="space-y-6 max-w-none md:translate-x-0" aria-label="Testimonios">
                   {/* 1 */}
                   <article
-                    className="flex items-start justify-between gap-5 bg-black/20 backdrop-blur-sm border border-white/5 rounded-2xl p-5 transition hover:bg-black/25"
+                    className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-5 bg-black/20 backdrop-blur-sm border border-white/5 rounded-2xl p-5 transition hover:bg-black/25"
                     aria-label="Maria Florencia Gonzalez"
                   >
-                    <div className="flex items-start gap-5 flex-1">
+                    <div className="flex min-w-0 items-start gap-3 sm:gap-5 flex-1">
                       <img
                         src={daiana}
                         alt="Maria Florencia Gonzalez "
-                        className="h-14 w-14 rounded-full object-cover"
+                        className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
                       />
 
                       <div>
@@ -507,14 +695,14 @@ export default function App() {
 
                   {/* 2 */}
                   <article
-                    className="flex items-start justify-between gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50"
+                    className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50"
                     aria-label="Testimonio de Martin R."
                   >
-                    <div className="flex items-start gap-5 flex-1">
+                    <div className="flex min-w-0 items-start gap-3 sm:gap-5 flex-1">
                       <img
                         src={martin}
                         alt="Martin R."
-                        className="h-14 w-14 rounded-full object-cover"
+                        className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
                       />
 
                       <div>
@@ -534,14 +722,14 @@ export default function App() {
 
                   {/* 3 */}
                   <article
-                    className="flex items-start justify-between gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50"
+                    className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50"
                     aria-label="Testimonio de Marcelo G."
                   >
-                    <div className="flex items-start gap-5 flex-1">
+                    <div className="flex min-w-0 items-start gap-3 sm:gap-5 flex-1">
                       <img
                         src={marcelo}
                         alt="Marcelo G."
-                        className="h-14 w-14 rounded-full object-cover"
+                        className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
                       />
 
                       <div>
@@ -562,12 +750,12 @@ export default function App() {
               </div>
 
               {/* DERECHA */}
-<aside className="space-y-6 flex flex-col items-end md:-mt-10" aria-label="Profesor destacado">
-  <h3 className="text-2xl font-semibold self-end w-[320px] text-left">
+<aside className="space-y-6 flex flex-col items-stretch lg:items-end lg:-mt-10" aria-label="Profesor destacado">
+  <h3 className="text-2xl font-semibold w-full lg:max-w-[320px] text-left">
     Profesionales de calidad
   </h3>
 
-  <div className="rounded-3xl overflow-hidden bg-white/[0.02] backdrop-blur-sm border border-white/15 w-[320px]">
+  <div className="rounded-3xl overflow-hidden bg-white/[0.02] backdrop-blur-sm border border-white/15 w-full lg:max-w-[320px]">
     <img
       src={profesor}
       alt="Profesor de coctelería"
@@ -617,7 +805,7 @@ export default function App() {
   </div>
 
   <a
-    href="https://wa.me/5491154708191?text=Hola!%20Quiero%20hablar%20con%20un%20asesor%20sobre%20los%20cursos."
+    href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20de%20cocteler%C3%ADa%20para%20un%20evento."
     target="_blank"
     rel="noopener noreferrer"
     className="block w-full text-center bg-[#C65D3A] hover:bg-[#A84E30] text-white font-semibold py-3 rounded-xl transition"
@@ -640,13 +828,13 @@ export default function App() {
   {/* puente suave HACIA el footer */}
   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-[#0B0D10]" />
 
-  <div className="max-w-4xl mx-auto px-8 text-center">
-    <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.1]">
+  <div className="max-w-4xl mx-auto px-5 sm:px-8 text-center">
+    <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.1]">
       Hagamos de tu evento algo extraordinario.
       </h2>
 
 
-    <p className="mt-5 text-white/70 text-lg max-w-2xl mx-auto">
+    <p className="mt-5 text-white/70 text-base sm:text-lg max-w-2xl mx-auto">
       Contanos qué estás planeando y diseñemos juntos una experiencia de coctelería a la altura de tu celebración.
     </p>
 
@@ -665,10 +853,10 @@ export default function App() {
 
     
 
-      <footer className="bg-[#0B0D10]">
+      <footer id="contacto" className="bg-[#0B0D10]">
 
         <div className="max-w-7xl mx-auto px-8 py-16">
-          <div className="grid md:grid-cols-3 gap-12 items-start">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-12 items-start">
 
             {/* MARCA */}
             <div>
