@@ -27,8 +27,9 @@ export default function App() {
 
           {/* Menú de escritorio */}
           <nav className="hidden items-center gap-10 text-lg font-semibold text-white/90 md:flex" aria-label="Navegación principal">
-            <a href="#cursos" className="transition hover:text-white">Eventos</a>
-            <a href="#servicios" className="transition hover:text-white">Servicios</a>
+            <a href="#eventos" className="transition hover:text-white">Eventos</a>
+            <a href="#nosotros" className="transition hover:text-white">Nosotros</a>
+            <a href="#resenas" className="transition hover:text-white">Reseñas</a>
             <a href="#contacto" className="transition hover:text-white">Contacto</a>
           </nav>
 
@@ -54,8 +55,9 @@ export default function App() {
         </div>
         {menuAbierto && (
           <nav id="menu-mobile" aria-label="Navegación móvil" className="absolute inset-x-0 top-[80px] flex flex-col gap-1 border-b border-white/15 bg-[#0F1115]/95 px-6 py-4 shadow-xl backdrop-blur-lg md:hidden">
-            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#cursos" onClick={() => setMenuAbierto(false)}>Eventos</a>
-            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#servicios" onClick={() => setMenuAbierto(false)}>Servicios</a>
+            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#eventos" onClick={() => setMenuAbierto(false)}>Eventos</a>
+            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#nosotros" onClick={() => setMenuAbierto(false)}>Nosotros</a>
+            <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#resenas" onClick={() => setMenuAbierto(false)}>Reseñas</a>
             <a className="rounded-lg px-3 py-3 hover:bg-white/10" href="#contacto" onClick={() => setMenuAbierto(false)}>Contacto</a>
           </nav>
         )}
@@ -91,30 +93,34 @@ export default function App() {
                 </h1>
 
 
-      <p className="mt-6 max-w-md text-sm text-white/80 leading-relaxed sm:text-[16px]">
-        Barras móviles, coctelería de autor y servicio profesional para celebraciones únicas.
-      </p>
+<p className="mt-6 max-w-md text-sm text-white/80 leading-relaxed sm:text-[16px]">
+  Barras móviles, coctelería de autor y servicio profesional
+  para celebraciones únicas.
+</p>
 
-        <div className="mt-10 flex flex-col gap-3 sm:mt-16 sm:flex-row sm:gap-4 lg:mt-30">
+{/* BOTONES DEL HERO */}
+<div className="mt-10 flex flex-col gap-3 sm:mt-16 sm:flex-row sm:gap-4 lg:mt-30">
 
-          <a
-            href="#contacto"
-            className="inline-flex items-center justify-center rounded-full bg-[#C65D3A] px-7 py-3 text-sm font-semibold text-white hover:bg-[#A84E30] transition"
-          >
-            Cotizá tu evento
-          </a>
+  {/* BOTÓN PRINCIPAL */}
+  <a
+    href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20solicitar%20un%20presupuesto%20para%20un%20evento."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center rounded-full bg-[#C65D3A] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#A84E30]"
+  >
+    Cotizá tu evento
+  </a>
 
-          <a
-  href="https://wa.me/5491154708191?text=Hola%2C%20quisiera%20consultar%20por%20el%20servicio%20de%20cocteler%C3%ADa%20para%20un%20evento."
+  {/* BOTÓN SECUNDARIO */}
+  <a
+    href="#eventos"
+    className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+  >
+    Conocé nuestros servicios
+  </a>
 
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur px-7 py-3 text-sm font-semibold text-white hover:bg-white/20 transition"
->
-  Contactanos por WhatsApp
-</a>
+</div>
 
-        </div>
       </div>
 
       <aside className="hidden lg:flex flex-col gap-6 pl-6 mt-14" aria-label="Indicadores de confianza">
@@ -141,9 +147,9 @@ export default function App() {
 
 </section>
 
-        {/* SECCIÓN: CURSOS (AHORA VA ACÁ) */}
+        {/* SECCIÓN: EVENTOS */}
         <section
-          id="cursos"
+          id="eventos"
           className="pt-8 pb-20 bg-gradient-to-b from-[#0F1115] via-[#0B0D10] to-[#0F1115]"
         >
           <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -596,7 +602,7 @@ export default function App() {
         </section>
 
         {/* SECCIÓN: ¿POR QUÉ ELEGIRNOS?  */}
-        <section className="relative z-20 pt-14 pb-20 lg:-mt-24 lg:pb-24 rounded-t-[32px] lg:rounded-t-[44px] bg-[#0F1115]">
+        <section id="nosotros" className="relative z-20 pt-14 pb-20 lg:-mt-24 lg:pb-24 rounded-t-[32px] lg:rounded-t-[44px] bg-[#0F1115]">
           {/* Puente visual Hero → Sección */}
           <div className="pointer-events-none absolute inset-x-0 -top-24 h-24 bg-gradient-to-b from-black/0 via-[#0F1115]/60 to-[#0F1115]" />
 
@@ -660,95 +666,149 @@ export default function App() {
     </div>
   </div>
 
+                
+                {/* TÍTULO DE RESEÑAS */}
+                  <div id="resenas" className="mb-6">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                        Lo que dicen nuestros clientes
+                      </h3>
+  
+                          <p className="mt-2 text-sm text-white/60">
+                          Reseñas reales en Google
+                          </p>
+                              </div>
 
-                <div className="space-y-6 max-w-none md:translate-x-0" aria-label="Testimonios">
-                  {/* 1 */}
-                  <article
-                    className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-5 bg-black/20 backdrop-blur-sm border border-white/5 rounded-2xl p-5 transition hover:bg-black/25"
-                    aria-label="Maria Florencia Gonzalez"
-                  >
-                    <div className="flex min-w-0 items-start gap-3 sm:gap-5 flex-1">
-                      <img
-                        src={daiana}
-                        alt="Maria Florencia Gonzalez "
-                        className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
-                      />
+                
+{/* RESEÑAS DE GOOGLE */}
+<div
+  className="space-y-5"
+  aria-label="Testimonios"
+>
+  {/* RESEÑA 1 */}
+  <article className="rounded-2xl border border-white/10 bg-black/30 p-5 md:p-6 transition-colors hover:bg-white/[0.04]">
 
-                      <div>
-                        <p className="text-[15px] leading-relaxed text-white/85">
-                            "todo excelente ! súper recomendable ⭐️⭐️⭐️⭐️⭐️
-                            La barra impecable y Ramiro un genio y buena onda. Muy atento y copado con todos los invitados.
-                            El cumpleaños salió hermoso y todos encantados con los tragos 🍸🩷
+    <div className="flex items-center gap-4">
 
-                            es la segunda vez que contratamos el servicio y sin duda vamos a volver a hacerlo !"
-                        </p>
-                        <p className="mt-2 text-sm font-semibold text-white">
-                          — Maria Florencia Gonzalez · Cliente de Drink company
-                        </p>
-                      </div>
-                    </div>
+      {/* AVATAR */}
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/15 bg-[#49352F]">
+        <span className="text-lg font-semibold text-white">MF</span>
+      </div>
 
-                    <div className="text-[#C65D3A]/90 text-[18px] whitespace-nowrap">
-                      ★★★★★
-                    </div>
-                  </article>
+      {/* NOMBRE */}
+      <div className="min-w-0 flex-1">
+        <h3 className="text-sm md:text-base font-semibold text-white">
+          María Florencia González
+        </h3>
+        <p className="mt-1 text-xs text-white/50">
+                    Cliente de Drink Company
 
-                  {/* 2 */}
-                  <article
-                    className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50"
-                    aria-label="Testimonio de Martin R."
-                  >
-                    <div className="flex min-w-0 items-start gap-3 sm:gap-5 flex-1">
-                      <img
-                        src={martin}
-                        alt="Martin R."
-                        className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
-                      />
+        </p>
+      </div>
 
-                      <div>
-                        <p className="text-[15px] leading-relaxed text-white/85">
-                          “Excelente servicio, si estás buscando contratar una barra que te ofrezca bebidas y tragos de calidad, no dudes en contratar a Ramiro y a su equipo. Estuvieron en el cumpleaños de 15 de mi hija en Victoria PALACE y los volveremos a contratar para los 50 de marido. Cumplieron con todo y mucho más.”
-                        </p>
-                        <p className="mt-2 text-sm font-semibold text-white">
-                          — Maria Alison · Cliente de Drink company
-                        </p>
-                      </div>
-                    </div>
+      {/* ESTRELLAS */}
+      <div className="hidden sm:block shrink-0 text-[#C65D3A] text-lg tracking-wide">
+        ★★★★★
+      </div>
+    </div>
 
-                    <div className="text-[#C65D3A]/90 text-[18px] whitespace-nowrap">
-                      ★★★★★
-                    </div>
-                  </article>
+    <div className="mt-3 sm:hidden text-[#C65D3A] tracking-wide">
+      ★★★★★
+    </div>
 
-                  {/* 3 */}
-                  <article
-                    className="flex flex-col sm:flex-row items-start justify-between gap-4 sm:gap-5 bg-black/40 backdrop-blur-lg border border-white/10 rounded-2xl p-5 transition hover:bg-black/50"
-                    aria-label="Testimonio de Marcelo G."
-                  >
-                    <div className="flex min-w-0 items-start gap-3 sm:gap-5 flex-1">
-                      <img
-                        src={marcelo}
-                        alt="Marcelo G."
-                        className="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
-                      />
+    {/* COMENTARIO */}
+    <p className="mt-4 text-sm md:text-[15px] leading-relaxed text-white/80">
+      “Todo excelente, súper recomendable. La barra impecable y Ramiro
+      un genio y buena onda. Muy atento y copado con todos los invitados.
+      El cumpleaños salió hermoso y todos encantados con los tragos.
+      Es la segunda vez que contratamos el servicio y sin duda vamos
+      a volver a hacerlo.”
+    </p>
 
-                      <div>
-                        <p className="text-[15px] leading-relaxed text-white/85">
-                          “Impecable servicio, buena onda y predisposición, muy buena calidad, la verdad están en todo! Súper recomendable! ☺️”
-                        </p>
-                        <p className="mt-2 text-sm font-semibold text-white">
-                          — Sabrina GFonzalez · Cliente de Drink company
-                        </p>
-                      </div>
-                    </div>
+  </article>
 
-                    <div className="text-[#C65D3A]/90 text-[18px] whitespace-nowrap">
-                      ★★★★☆
-                    </div>
-                  </article>
-                </div>
+  {/* RESEÑA 2 */}
+  <article className="rounded-2xl border border-white/10 bg-black/30 p-5 md:p-6 transition-colors hover:bg-white/[0.04]">
+
+    <div className="flex items-center gap-4">
+
+      {/* AVATAR */}
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/15 bg-[#34413E]">
+        <span className="text-lg font-semibold text-white">MA</span>
+      </div>
+
+      {/* NOMBRE */}
+      <div className="min-w-0 flex-1">
+        <h3 className="text-sm md:text-base font-semibold text-white">
+          María Alison
+        </h3>
+        <p className="mt-1 text-xs text-white/50">
+                    Cliente de Drink Company
+
+        </p>
+      </div>
+
+      {/* ESTRELLAS */}
+      <div className="hidden sm:block shrink-0 text-[#C65D3A] text-lg tracking-wide">
+        ★★★★★
+      </div>
+    </div>
+
+    <div className="mt-3 sm:hidden text-[#C65D3A] tracking-wide">
+      ★★★★★
+    </div>
+
+    {/* COMENTARIO */}
+    <p className="mt-4 text-sm md:text-[15px] leading-relaxed text-white/80">
+      “Excelente servicio, si estás buscando contratar una barra que
+      te ofrezca bebidas y tragos de calidad, no dudes en contratar
+      a Ramiro y a su equipo. Estuvieron en el cumpleaños de 15 de
+      mi hija en Victoria PALACE y los volveremos a contratar para
+      los 50 de marido. Cumplieron con todo y mucho más.”
+    </p>
+
+  </article>
+
+  {/* RESEÑA 3 */}
+  <article className="rounded-2xl border border-white/10 bg-black/30 p-5 md:p-6 transition-colors hover:bg-white/[0.04]">
+
+    <div className="flex items-center gap-4">
+
+      {/* AVATAR */}
+      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/15 bg-[#3D3549]">
+        <span className="text-lg font-semibold text-white">SG</span>
+      </div>
+
+      {/* NOMBRE */}
+      <div className="min-w-0 flex-1">
+        <h3 className="text-sm md:text-base font-semibold text-white">
+          Sabrina González
+        </h3>
+        <p className="mt-1 text-xs text-white/50">
+          Cliente de Drink Company
+        </p>
+      </div>
+
+      {/* ESTRELLAS */}
+      <div className="hidden sm:block shrink-0 text-[#C65D3A] text-lg tracking-wide">
+        ★★★★☆
+      </div>
+    </div>
+
+    <div className="mt-3 sm:hidden text-[#C65D3A] tracking-wide">
+      ★★★★☆
+    </div>
+
+    {/* COMENTARIO */}
+    <p className="mt-4 text-sm md:text-[15px] leading-relaxed text-white/80">
+      “Impecable servicio, buena onda y predisposición, muy buena
+      calidad, la verdad están en todo. ¡Súper recomendable!”
+    </p>
+
+  </article>
+</div>
+
               </div>
-
+              
               {/* DERECHA */}
 <aside className="space-y-6 flex flex-col items-stretch lg:items-end lg:-mt-10" aria-label="Profesor destacado">
   <h3 className="text-2xl font-semibold w-full lg:max-w-[320px] text-left">
@@ -815,6 +875,33 @@ export default function App() {
 </aside>
 
             </div>
+
+            
+{/* VER MÁS RESEÑAS EN GOOGLE */}
+<div className="mt-10 flex flex-col items-center text-center">
+
+  <h3 className="text-xl md:text-2xl font-semibold text-white">
+    ¿Querés conocer más experiencias?
+  </h3>
+
+  <p className="mt-3 text-sm md:text-base text-white/60">
+    Descubrí lo que opinan nuestros clientes en Google.
+  </p>
+
+  <a
+  href="https://maps.app.goo.gl/yw7mDsJRisUyTcYZA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-6 inline-flex items-center justify-center
+    rounded-full bg-[#C65D3A] px-7 py-3
+    text-sm font-semibold text-white
+    hover:bg-[#A84E30] transition-colors"
+>
+  Ver todas las reseñas en Google ↗
+</a>
+
+</div>
+
           </div>
 
         </section>
