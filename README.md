@@ -42,7 +42,9 @@ También se buscó mantener una identidad visual consistente y una navegación s
 
 ## Estado del proyecto
 
-Proyecto funcional, en etapa de mantenimiento y mejoras continuas.
+**Proyecto finalizado, desplegado y en producción.**
+
+La landing page se encuentra publicada y en uso como sitio web comercial de Drink Company, permitiendo presentar sus servicios de coctelería para eventos y recibir consultas de potenciales clientes.
 
 ## Demo
 
