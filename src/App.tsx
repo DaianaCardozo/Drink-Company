@@ -3,9 +3,6 @@ import logo from "./assets/logo.png";
 import hero from "./assets/hero.jpg";
 import profesor from "./assets/profesor.jpg";
 
-import daiana from "./assets/avatars/daiana.png";
-import marcelo from "./assets/avatars/marcelo.jpg";
-import martin from "./assets/avatars/martin.jpg";
 
 import cursoAcademia from "./assets/cursos/cursoacademia.jpg";
 import cursoInicial from "./assets/cursos/cursoinicial.jpg";
