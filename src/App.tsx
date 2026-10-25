@@ -21,7 +21,7 @@ export default function App() {
       {/* HEADER RESPONSIVE */}
       <header className="absolute inset-x-0 top-0 z-30 border-b border-white/30">
         <div className="mx-auto flex h-[80px] max-w-6xl items-center justify-between px-5 sm:px-8 md:h-[90px]">
-          <a href="#home" className="flex shrink-0 items-center md:-ml-12" aria-label="Ir al inicio" onClick={() => setMenuAbierto(false)}>
+          <a href="#home" className="flex items-center shrink-0 lg:-ml-27" aria-label="Ir al inicio" onClick={() => setMenuAbierto(false)}>
             <img src={logo} alt="Drink Company" className="h-[76px] w-auto object-contain md:h-[100px]" />
           </a>
 
